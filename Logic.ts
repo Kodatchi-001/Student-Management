@@ -1,230 +1,320 @@
 const body = document.querySelector('body') as HTMLElement;
 
-const section = document.createElement('section') as HTMLElement;
-section.classList.add('w-full', 'md:h-screen', 'flex', 'justify-between', 'p-4', 'lg:p-6', 'gap-8', 'md:gap-2', 'lg:gap-8', 'items-center', 'flex-wrap', 'lg:flex-nowrap');
+const Section = document.createElement('section') as HTMLElement;
+Section.classList.add('w-full', 'md:h-screen', 'flex', 'justify-between', 'p-4', 'lg:p-6', 'gap-8', 'md:gap-2', 'lg:gap-8', 'items-center', 'flex-wrap', 'lg:flex-nowrap');
 
 //Card-1
-const div_card_1 = document.createElement('div') as HTMLDivElement;
-div_card_1.classList.add('w-full', 'md:w-[48%]', 'lg:w-[28%]', 'h-full', 'flex', 'items-start', 'flex-wrap', 'p-4', 'gap-1', 'lg:gap-0', 'lg:p-6', 'bg-white', 'rounded-2xl', 'cards');
-div_card_1.style.boxShadow = '0px 0px 30px rgba(0, 0, 0, 0.322)';
+const Card_1 = document.createElement('div') as HTMLDivElement;
+Card_1.classList.add('w-full', 'md:w-[48%]', 'lg:w-[28%]', 'h-full', 'flex', 'items-start', 'flex-wrap', 'p-4', 'gap-1', 'lg:gap-0', 'lg:p-6', 'bg-white', 'rounded-2xl', 'cards');
+Card_1.style.boxShadow = '0px 0px 30px rgba(0, 0, 0, 0.322)';
 
 //Tittle-Card-1
-const div_card_1_tittle = document.createElement('h1') as HTMLDivElement;
-div_card_1_tittle.classList.add('text-2xl', 'font-bold');
-div_card_1_tittle.innerHTML = 'Ajouter Etudiant';
+const Tittle_Card_1 = document.createElement('h1') as HTMLDivElement;
+Tittle_Card_1.classList.add('text-2xl', 'font-bold');
+Tittle_Card_1.innerHTML = 'Ajouter Etudiant';
 
-const form = document.createElement('form') as HTMLFormElement;
-form.classList.add('w-full', 'h-[75%]', 'flex', 'flex-wrap', 'gap-2');
+const Form_Information = document.createElement('form') as HTMLFormElement;
+Form_Information.classList.add('w-full', 'h-[75%]', 'flex', 'flex-wrap', 'gap-2');
 
 //Information-1
-const form_div_1 = document.createElement('div') as HTMLDivElement;
-form_div_1.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_1 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_1.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_prenom = document.createElement('label') as HTMLLabelElement;
-label_prenom.textContent = 'Prenom :';
-label_prenom.classList.add('w-full');
+const Label_FirstName = document.createElement('label') as HTMLLabelElement;
+Label_FirstName.textContent = 'Prenom :';
+Label_FirstName.classList.add('w-full');
 
-const input_prenom = document.createElement('input') as HTMLInputElement;
-input_prenom.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
-input_prenom.setAttribute('type', 'text');
-input_prenom.placeholder = 'Prenom';
+const Input_FirstName = document.createElement('input') as HTMLInputElement;
+Input_FirstName.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
+Input_FirstName.setAttribute('type', 'text');
+Input_FirstName.placeholder = 'Prenom';
 
-form_div_1.appendChild(label_prenom);
-form_div_1.appendChild(input_prenom);
+Form_Information_div_1.appendChild(Label_FirstName);
+Form_Information_div_1.appendChild(Input_FirstName);
 
 //Information-2
-const form_div_2 = document.createElement('div') as HTMLDivElement;
-form_div_2.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_2 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_2.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_nom = document.createElement('label') as HTMLLabelElement;
-label_nom.textContent = 'Nom :';
-label_nom.classList.add('w-full');
+const Label_LastName = document.createElement('label') as HTMLLabelElement;
+Label_LastName.textContent = 'Nom :';
+Label_LastName.classList.add('w-full');
 
-const input_nom = document.createElement('input') as HTMLInputElement;
-input_nom.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
-input_nom.setAttribute('type', 'text');
-input_nom.placeholder = 'Nom';
+const Input_LastName = document.createElement('input') as HTMLInputElement;
+Input_LastName.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
+Input_LastName.setAttribute('type', 'text');
+Input_LastName.placeholder = 'Nom';
 
-form_div_2.appendChild(label_nom);
-form_div_2.appendChild(input_nom);
+Form_Information_div_2.appendChild(Label_LastName);
+Form_Information_div_2.appendChild(Input_LastName);
 
 //Information-3
-const form_div_3 = document.createElement('div') as HTMLDivElement;
-form_div_3.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_3 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_3.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_age = document.createElement('label') as HTMLLabelElement;
-label_age.textContent = 'Age :';
-label_age.classList.add('w-full');
+const Label_Age = document.createElement('label') as HTMLLabelElement;
+Label_Age.textContent = 'Age :';
+Label_Age.classList.add('w-full');
 
-const input_age = document.createElement('input') as HTMLInputElement;
-input_age.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
-input_age.setAttribute('type', 'number');
-input_age.placeholder = 'Age';
+const Input_Age = document.createElement('input') as HTMLInputElement;
+Input_Age.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
+Input_Age.setAttribute('type', 'number');
+Input_Age.placeholder = 'Age';
 
-form_div_3.appendChild(label_age);
-form_div_3.appendChild(input_age);
+Form_Information_div_3.appendChild(Label_Age);
+Form_Information_div_3.appendChild(Input_Age);
 
 //Information-4
-const form_div_4 = document.createElement('div') as HTMLDivElement;
-form_div_4.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_4 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_4.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_sexe = document.createElement('label') as HTMLLabelElement;
-label_sexe.textContent = 'Sexe :';
-label_sexe.classList.add('w-full');
+const Label_Sexe = document.createElement('label') as HTMLLabelElement;
+Label_Sexe.textContent = 'Sexe :';
+Label_Sexe.classList.add('w-full');
 
-const select_sexe = document.createElement('select') as HTMLSelectElement;
-select_sexe.classList.add('w-full', 'p-1', 'px-1', 'border', 'border-black');
+const Select_Sexe = document.createElement('select') as HTMLSelectElement;
+Select_Sexe.classList.add('w-full', 'p-1', 'px-1', 'border', 'border-black');
 
-const option_sexe_1 = document.createElement('option') as HTMLOptionElement;
-option_sexe_1.textContent = 'Masculin';
-option_sexe_1.value = 'Masculin';
+const Sexe_Option_1 = document.createElement('option') as HTMLOptionElement;
+Sexe_Option_1.textContent = 'Masculin';
+Sexe_Option_1.value = 'Masculin';
 
-const option_sexe_2 = document.createElement('option') as HTMLOptionElement;
-option_sexe_2.textContent = 'Femin';
-option_sexe_2.value = 'Femin';
+const Sexe_Option_2 = document.createElement('option') as HTMLOptionElement;
+Sexe_Option_2.textContent = 'Femin';
+Sexe_Option_2.value = 'Femin';
 
-select_sexe.appendChild(option_sexe_1);
-select_sexe.appendChild(option_sexe_2);
+Select_Sexe.appendChild(Sexe_Option_1);
+Select_Sexe.appendChild(Sexe_Option_2);
 
-form_div_4.appendChild(label_sexe);
-form_div_4.appendChild(select_sexe);
+Form_Information_div_4.appendChild(Label_Sexe);
+Form_Information_div_4.appendChild(Select_Sexe);
 
 //Information-5
-const form_div_5 = document.createElement('div') as HTMLDivElement;
-form_div_5.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_5 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_5.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_date = document.createElement('label') as HTMLLabelElement;
-label_date.textContent = 'Date :';
-label_date.classList.add('w-full');
+const Label_Date = document.createElement('label') as HTMLLabelElement;
+Label_Date.textContent = 'Date :';
+Label_Date.classList.add('w-full');
 
-const input_date = document.createElement('input') as HTMLInputElement;
-input_date.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
-input_date.setAttribute('type', 'date');
+const Input_Date = document.createElement('input') as HTMLInputElement;
+Input_Date.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
+Input_Date.setAttribute('type', 'date');
 
-form_div_5.appendChild(label_date);
-form_div_5.appendChild(input_date);
+Form_Information_div_5.appendChild(Label_Date);
+Form_Information_div_5.appendChild(Input_Date);
 
 //Information-6
-const form_div_6 = document.createElement('div') as HTMLDivElement;
-form_div_6.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_6 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_6.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_email = document.createElement('label') as HTMLLabelElement;
-label_email.textContent = 'Email :';
-label_email.classList.add('w-full');
+const Label_Email = document.createElement('label') as HTMLLabelElement;
+Label_Email.textContent = 'Email :';
+Label_Email.classList.add('w-full');
 
-const input_email = document.createElement('input') as HTMLInputElement;
-input_email.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
-input_email.setAttribute('email', 'number');
-input_email.placeholder = 'Email';
+const Input_Email = document.createElement('input') as HTMLInputElement;
+Input_Email.classList.add('w-full', 'p-1', 'px-2', 'border', 'border-black');
+Input_Email.setAttribute('email', 'number');
+Input_Email.placeholder = 'Email';
 
-form_div_6.appendChild(label_email);
-form_div_6.appendChild(input_email);
+Form_Information_div_6.appendChild(Label_Email);
+Form_Information_div_6.appendChild(Input_Email);
 
 //Information-7
-const form_div_7 = document.createElement('div') as HTMLDivElement;
-form_div_7.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
+const Form_Information_div_7 = document.createElement('div') as HTMLDivElement;
+Form_Information_div_7.classList.add('w-full', 'flex', 'flex-wrap', 'gap-1');
 
-const label_adresse = document.createElement('label') as HTMLLabelElement;
-label_adresse.textContent = 'Adresse :';
-label_adresse.classList.add('w-full');
+const Label_Adresse = document.createElement('label') as HTMLLabelElement;
+Label_Adresse.textContent = 'Adresse :';
+Label_Adresse.classList.add('w-full');
 
-const textarea_adresse = document.createElement('textarea') as HTMLTextAreaElement;
-textarea_adresse.classList.add('w-full', 'xl:h-[10vh]', 'xl:p-2', 'resize-none', 'border', 'border-black');
-textarea_adresse.placeholder = 'Adresse';
+const Textarea_Adresse = document.createElement('textarea') as HTMLTextAreaElement;
+Textarea_Adresse.classList.add('w-full', 'xl:h-[10vh]', 'xl:p-2', 'resize-none', 'border', 'border-black');
+Textarea_Adresse.placeholder = 'Adresse';
 
-form_div_7.appendChild(label_adresse);
-form_div_7.appendChild(textarea_adresse);
+Form_Information_div_7.appendChild(Label_Adresse);
+Form_Information_div_7.appendChild(Textarea_Adresse);
 
 //Button-Card
 const Button = document.createElement('button') as HTMLButtonElement;
 Button.textContent = 'Ajouter'
-Button.classList.add('w-full', 'p-3', 'mt-auto', 'rounded-lg', 'bg-gray-300' , 'font-[600]');
+Button.classList.add('w-full', 'p-3', 'mt-auto', 'rounded-lg', 'bg-gray-300', 'font-[600]');
+Button.addEventListener('click', AddStudents);
 
-//Append-Balise-Card-1
-div_card_1.appendChild(div_card_1_tittle);
+//Append-Card-1
+Card_1.appendChild(Tittle_Card_1);
 
-div_card_1.appendChild(form);
-form.appendChild(form_div_1);
-form.appendChild(form_div_2);
-form.appendChild(form_div_3);
-form.appendChild(form_div_4);
-form.appendChild(form_div_5);
-form.appendChild(form_div_6);
-form.appendChild(form_div_7);
+Card_1.appendChild(Form_Information);
+Form_Information.appendChild(Form_Information_div_1);
+Form_Information.appendChild(Form_Information_div_2);
+Form_Information.appendChild(Form_Information_div_3);
+Form_Information.appendChild(Form_Information_div_4);
+Form_Information.appendChild(Form_Information_div_5);
+Form_Information.appendChild(Form_Information_div_6);
+Form_Information.appendChild(Form_Information_div_7);
 
-div_card_1.appendChild(Button);
+Card_1.appendChild(Button);
 
 //Card-2
-const div_card_2 = document.createElement('div') as HTMLDivElement;
-div_card_2.classList.add('w-full', 'md:w-[48%]', 'lg:w-[70%]', 'h-full', 'p-6', 'overflow-scroll', 'lg:overflow-hidden', 'bg-white', 'rounded-2xl', 'card-table', 'cards');
-div_card_2.style.boxShadow = '0px 0px 30px rgba(0, 0, 0, 0.322)';
+const Card_2 = document.createElement('div') as HTMLDivElement;
+Card_2.classList.add('w-full', 'md:w-[48%]', 'lg:w-[70%]', 'h-full', 'p-6', 'overflow-scroll', 'lg:overflow-hidden', 'bg-white', 'rounded-2xl', 'card-table', 'cards');
+Card_2.style.boxShadow = '0px 0px 30px rgba(0, 0, 0, 0.322)';
 
 //Tittle-Card-2
-const div_card_2_tittle = document.createElement('h1') as HTMLHeadingElement;
-div_card_2_tittle.classList.add('text-2xl', 'font-bold');
-div_card_2_tittle.innerHTML = 'Liste Des Etudiant';
+const Tittle_Card_2 = document.createElement('h1') as HTMLHeadingElement;
+Tittle_Card_2.classList.add('text-2xl', 'font-bold');
+Tittle_Card_2.innerHTML = 'Liste Des Etudiant';
 
 //Table
-var table = document.createElement('table') as HTMLTableElement;
-table.classList.add('w-full', 'mt-8', 'bg-white');
-table.style.boxShadow = '0px 0px 30px rgba(0, 0, 0, 0.153)';
+const Table_Information = document.createElement('table') as HTMLTableElement;
+Table_Information.classList.add('w-full', 'mt-8', 'bg-white');
+Table_Information.style.boxShadow = '0px 0px 30px rgba(0, 0, 0, 0.153)';
 
-const tr_1 = document.createElement('tr') as HTMLTableRowElement;
+const Frist_Line = document.createElement('tr') as HTMLTableRowElement;
 
-const th_prenom = document.createElement('th') as HTMLTableCellElement;
-th_prenom.classList.add('p-2', 'bg-gray-300');
-th_prenom.style.fontWeight = 'font-weight: 600';
-th_prenom.textContent = 'Prenom';
+const Th_FirstName = document.createElement('th') as HTMLTableCellElement;
+Th_FirstName.classList.add('p-2', 'bg-gray-300');
+Th_FirstName.style.fontWeight = 'font-weight: 600';
+Th_FirstName.textContent = 'Prenom';
 
-const th_Nom = document.createElement('th') as HTMLTableCellElement;
-th_Nom.classList.add('p-2', 'bg-gray-300');
-th_Nom.style.fontWeight = 'font-weight: 600';
-th_Nom.textContent = 'Nom';
+const Th_LastName = document.createElement('th') as HTMLTableCellElement;
+Th_LastName.classList.add('p-2', 'bg-gray-300');
+Th_LastName.style.fontWeight = 'font-weight: 600';
+Th_LastName.textContent = 'Nom';
 
-const th_Age = document.createElement('th') as HTMLTableCellElement;
-th_Age.classList.add('p-2', 'bg-gray-300');
-th_Age.style.fontWeight = 'font-weight: 600';
-th_Age.textContent = 'Age';
+const Th_Age = document.createElement('th') as HTMLTableCellElement;
+Th_Age.classList.add('p-2', 'bg-gray-300');
+Th_Age.style.fontWeight = 'font-weight: 600';
+Th_Age.textContent = 'Age';
 
-const th_sexe = document.createElement('th') as HTMLTableCellElement;
-th_sexe.classList.add('p-2', 'bg-gray-300');
-th_sexe.style.fontWeight = 'font-weight: 600';
-th_sexe.textContent = 'Sexe';
+const Th_Sexe = document.createElement('th') as HTMLTableCellElement;
+Th_Sexe.classList.add('p-2', 'bg-gray-300');
+Th_Sexe.style.fontWeight = 'font-weight: 600';
+Th_Sexe.textContent = 'Sexe';
 
-const th_date = document.createElement('th') as HTMLTableCellElement;
-th_date.classList.add('p-2', 'bg-gray-300');
-th_date.style.fontWeight = 'font-weight: 600';
-th_date.textContent = 'Date de Naissance';
+const Th_Date = document.createElement('th') as HTMLTableCellElement;
+Th_Date.classList.add('p-2', 'bg-gray-300');
+Th_Date.style.fontWeight = 'font-weight: 600';
+Th_Date.textContent = 'Date de Naissance';
 
-const th_email = document.createElement('th') as HTMLTableCellElement;
-th_email.classList.add('p-2', 'bg-gray-300');
-th_email.style.fontWeight = 'font-weight: 600';
-th_email.textContent = 'Email';
+const Th_Email = document.createElement('th') as HTMLTableCellElement;
+Th_Email.classList.add('p-2', 'bg-gray-300');
+Th_Email.style.fontWeight = 'font-weight: 600';
+Th_Email.textContent = 'Email';
 
-const th_adresse = document.createElement('th') as HTMLTableCellElement;
-th_adresse.classList.add('p-2', 'bg-gray-300');
-th_adresse.style.fontWeight = 'font-weight: 600';
-th_adresse.textContent = 'Adresse';
+const Th_Addresse = document.createElement('th') as HTMLTableCellElement;
+Th_Addresse.classList.add('p-2', 'bg-gray-300');
+Th_Addresse.style.fontWeight = 'font-weight: 600';
+Th_Addresse.textContent = 'Adresse';
 
-const th_Actions = document.createElement('th') as HTMLTableCellElement;
-th_Actions.classList.add('p-2', 'gap-8', 'bg-gray-300');
-th_Actions.textContent = 'Actions';
+const Th_Actions = document.createElement('th') as HTMLTableCellElement;
+Th_Actions.classList.add('p-2', 'gap-8', 'bg-gray-300');
+Th_Actions.textContent = 'Actions';
 
 //Append-Balise-Card-2
-table.appendChild(tr_1);
-tr_1.appendChild(th_prenom);
-tr_1.appendChild(th_Nom);
-tr_1.appendChild(th_Age);
-tr_1.appendChild(th_sexe);
-tr_1.appendChild(th_date);
-tr_1.appendChild(th_email);
-tr_1.appendChild(th_adresse);
-tr_1.appendChild(th_Actions);
+Table_Information.appendChild(Frist_Line);
+Frist_Line.appendChild(Th_FirstName);
+Frist_Line.appendChild(Th_LastName);
+Frist_Line.appendChild(Th_Age);
+Frist_Line.appendChild(Th_Sexe);
+Frist_Line.appendChild(Th_Date);
+Frist_Line.appendChild(Th_Email);
+Frist_Line.appendChild(Th_Addresse);
+Frist_Line.appendChild(Th_Actions);
 
-div_card_2.appendChild(div_card_2_tittle);
-div_card_2.appendChild(table);
+Card_2.appendChild(Tittle_Card_2);
+Card_2.appendChild(Table_Information);
 
 //Append-Balise-Body
-body.appendChild(section);
-section.appendChild(div_card_1);
-section.appendChild(div_card_2);
+body.appendChild(Section);
+Section.appendChild(Card_1);
+Section.appendChild(Card_2);
+
+//Data-Structure
+interface Information {
+    FirstName?: string,
+    LastName?: string,
+    Age?: number,
+    Sexe?: string,
+    Date?: string,
+    Email?: string,
+    Adresse?: string
+}
+
+function AddStudents() {
+    let validation: boolean = true;
+
+    //FirstName_Validation
+    Input_FirstName.value.trim() === ''
+        ? (Input_FirstName.style.border = '1px solid red', validation = false)
+        : (Input_FirstName.style.border = '');
+
+    //LastName_Validation
+    Input_LastName.value.trim() === ''
+        ? (Input_LastName.style.border = '1px solid red', validation = false)
+        : (Input_LastName.style.border = '');
+
+    //Age_Validation
+    Input_Age.value.trim() === '' || parseInt(Input_Age.value) < 18
+        ? (Input_Age.style.border = '1px solid red', validation = false)
+        : (Input_Age.style.border = '');
+
+    //Date_Validation
+    Input_Date.value.trim() === ''
+        ? (Input_Date.style.border = '1px solid red', validation = false)
+        : (Input_Date.style.border = '');
+
+    //Email_Validation
+    Input_Email.value.trim() === ''
+        ? (Input_Email.style.border = '1px solid red', validation = false)
+        : (Input_Email.style.border = '');
+
+    //Adresse_Validation
+    Textarea_Adresse.value.trim() === ''
+        ? (Textarea_Adresse.style.border = '1px solid red', validation = false)
+        : (Textarea_Adresse.style.border = '');
+
+    //Check
+    if (!validation) {
+        window.alert('Remplir les informations');
+    }
+    else {
+        const AddStudents: Information = {
+            FirstName: Input_FirstName.value,
+            LastName: Input_LastName.value,
+            Age: parseInt(Input_Age.value),
+            Sexe: Select_Sexe.value,
+            Email: Input_Email.value,
+            Date: Input_Date.value,
+            Adresse: Textarea_Adresse.value
+        }
+
+        const tr_2 = document.createElement('tr') as HTMLTableRowElement;
+        tr_2.innerHTML =
+            ` 
+            <td class="p-2 text-center">${AddStudents.FirstName}</td>
+            <td class="p-2 text-center">${AddStudents.LastName}</td>
+            <td class="p-2 text-center">${AddStudents.Age}</td>
+            <td class="p-2 text-center">${AddStudents.Sexe}</td>
+            <td class="p-2 text-center">${AddStudents.Email}</td>
+            <td class="p-2 text-center">${AddStudents.Date}</td>
+            <td class="p-2 text-center">${AddStudents.Adresse}</td>
+            <td class="p-2 text-center flex justify-center items-center gap-2">
+                <i class='bx bxs-edit-alt cursor-pointer scale-125 text-green-500'onclick='Modifier(this)'></i>
+                <i class='bx bx-x cursor-pointer scale-150 text-red-500'onclick='Suprimmer(this)'></i>
+            </td>
+            `
+        Table_Information.appendChild(tr_2);
+        Clear();
+    }
+}
+
+//Clear-Inputs
+function Clear() {
+    Input_FirstName.value = '';
+    Input_LastName.value = '';
+    Input_Age.value = '';
+    Input_Date.value = '';
+    Input_Email.value = '';
+    Textarea_Adresse.value = '';
+};
