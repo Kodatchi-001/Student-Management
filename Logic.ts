@@ -139,7 +139,6 @@ Form_Information_div_7.appendChild(Textarea_Adresse);
 const Button = document.createElement('button') as HTMLButtonElement;
 Button.textContent = 'Ajouter'
 Button.classList.add('w-full', 'p-3', 'mt-auto', 'rounded-lg', 'bg-gray-300', 'font-[600]');
-Button.addEventListener('click', AddStudents);
 
 //Append-Card-1
 Card_1.appendChild(Tittle_Card_1);
@@ -241,42 +240,43 @@ interface Information {
     Adresse?: string
 }
 
-function AddStudents() {
+//Function AddStudents
+const AddStudents = () => {
     let validation: boolean = true;
-
+    
     //FirstName_Validation
     Input_FirstName.value.trim() === ''
-        ? (Input_FirstName.style.border = '1px solid red', validation = false)
-        : (Input_FirstName.style.border = '');
-
+    ? (Input_FirstName.style.border = '1px solid red', validation = false)
+    : (Input_FirstName.style.border = '');
+    
     //LastName_Validation
     Input_LastName.value.trim() === ''
-        ? (Input_LastName.style.border = '1px solid red', validation = false)
-        : (Input_LastName.style.border = '');
-
+    ? (Input_LastName.style.border = '1px solid red', validation = false)
+    : (Input_LastName.style.border = '');
+    
     //Age_Validation
     Input_Age.value.trim() === '' || parseInt(Input_Age.value) < 18
-        ? (Input_Age.style.border = '1px solid red', validation = false)
-        : (Input_Age.style.border = '');
-
+    ? (Input_Age.style.border = '1px solid red', validation = false)
+    : (Input_Age.style.border = '');
+    
     //Date_Validation
     Input_Date.value.trim() === ''
-        ? (Input_Date.style.border = '1px solid red', validation = false)
-        : (Input_Date.style.border = '');
-
+    ? (Input_Date.style.border = '1px solid red', validation = false)
+    : (Input_Date.style.border = '');
+    
     //Email_Validation
     Input_Email.value.trim() === ''
-        ? (Input_Email.style.border = '1px solid red', validation = false)
-        : (Input_Email.style.border = '');
-
+    ? (Input_Email.style.border = '1px solid red', validation = false)
+    : (Input_Email.style.border = '');
+    
     //Adresse_Validation
     Textarea_Adresse.value.trim() === ''
-        ? (Textarea_Adresse.style.border = '1px solid red', validation = false)
-        : (Textarea_Adresse.style.border = '');
-
+    ? (Textarea_Adresse.style.border = '1px solid red', validation = false)
+    : (Textarea_Adresse.style.border = '');
+    
     //Check
     if (!validation) {
-        window.alert('Remplir les informations');
+        return
     }
     else {
         const AddStudents: Information = {
@@ -284,33 +284,78 @@ function AddStudents() {
             LastName: Input_LastName.value,
             Age: parseInt(Input_Age.value),
             Sexe: Select_Sexe.value,
-            Email: Input_Email.value,
             Date: Input_Date.value,
+            Email: Input_Email.value,
             Adresse: Textarea_Adresse.value
         }
 
         const tr_2 = document.createElement('tr') as HTMLTableRowElement;
         tr_2.innerHTML =
-            ` 
-            <td class="p-2 text-center">${AddStudents.FirstName}</td>
-            <td class="p-2 text-center">${AddStudents.LastName}</td>
-            <td class="p-2 text-center">${AddStudents.Age}</td>
-            <td class="p-2 text-center">${AddStudents.Sexe}</td>
-            <td class="p-2 text-center">${AddStudents.Email}</td>
-            <td class="p-2 text-center">${AddStudents.Date}</td>
-            <td class="p-2 text-center">${AddStudents.Adresse}</td>
-            <td class="p-2 text-center flex justify-center items-center gap-2">
-                <i class='bx bxs-edit-alt cursor-pointer scale-125 text-green-500'onclick='Modifier(this)'></i>
-                <i class='bx bx-x cursor-pointer scale-150 text-red-500'onclick='Suprimmer(this)'></i>
-            </td>
-            `
+        ` 
+        <td class="p-2 text-center">${AddStudents.FirstName}</td>
+        <td class="p-2 text-center">${AddStudents.LastName}</td>
+        <td class="p-2 text-center">${AddStudents.Age}</td>
+        <td class="p-2 text-center">${AddStudents.Sexe}</td>
+        <td class="p-2 text-center">${AddStudents.Date}</td>
+        <td class="p-2 text-center">${AddStudents.Email}</td>
+        <td class="p-2 text-center">${AddStudents.Adresse}</td>
+        <td class="p-2 text-center flex justify-center items-center gap-2">
+        <i class='bx bxs-edit-alt cursor-pointer scale-125 mt-1 text-green-500'onclick='UpDateStudents(this)'></i>
+        <i class='bx bx-x cursor-pointer scale-150 text-red-500'onclick='RemoveStudents(this)'></i>
+        </td>
+        `
         Table_Information.appendChild(tr_2);
         Clear();
     }
 }
+Button.addEventListener('click', AddStudents);
+
+//Function RemoveStudents
+const RemoveStudents = (div: any) => div.parentNode.parentNode.remove();
+
+//Function UpDateStudents
+const UpDateStudents = (div: any) => {
+    // cells donne toutes les balises <td> dans la balise <tr>
+    const colmun = div.parentNode.parentNode.cells;
+    
+    Input_FirstName.value = colmun[0].textContent;
+    Input_LastName.value = colmun[1].textContent;
+    Input_Age.value = colmun[2].textContent;
+    Select_Sexe.value = colmun[3].textContent;
+    Input_Date.value = colmun[4].textContent;
+    Input_Email.value = colmun[5].textContent;
+    Textarea_Adresse.value = colmun[6].textContent;
+
+    Button.textContent = 'Modifier';
+
+    Button.removeEventListener('click', AddStudents);
+    Button.addEventListener('click', Change);
+
+    function Change() {
+        if (parseInt(Input_Age.value) < 18) {
+            alert('Vous etes Mineur');
+        }
+        else {
+            colmun[0].textContent = Input_FirstName.value;
+            colmun[1].textContent = Input_LastName.value;
+            colmun[2].textContent = Input_Age.value;
+            colmun[3].textContent = Select_Sexe.value;
+            colmun[4].textContent = Input_Date.value;
+            colmun[5].textContent = Input_Email.value;
+            colmun[6].textContent = Textarea_Adresse.value;
+
+            Button.textContent = 'Ajouter';
+
+            Button.removeEventListener('click', Change);
+            Button.addEventListener('click', AddStudents);
+
+            Clear();
+        }
+    };
+};
 
 //Clear-Inputs
-function Clear() {
+const Clear = () => {
     Input_FirstName.value = '';
     Input_LastName.value = '';
     Input_Age.value = '';
